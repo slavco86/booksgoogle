@@ -1,0 +1,21 @@
+{
+  "name": "html5-boilerplate_v5.3.0",
+  "authors": [
+    "<SlavCO> <<slavick.slavick@gmail.com>>"
+  ],
+  "description": "listing page",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6"
+  }
+}

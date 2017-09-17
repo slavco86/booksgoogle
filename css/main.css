@@ -148,6 +148,7 @@ nav a:hover{
 .row{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .book-header{
     display: flex;
@@ -157,6 +158,10 @@ nav a:hover{
 .book-title, .book-subtitle{
     padding: 5px;
     text-align: center;
+    margin: 0px;
+}
+.book-subtitle{
+    margin: 0px;
 }
 .book-authors, .book-author-name{
     margin: 0px;
@@ -168,9 +173,15 @@ nav a:hover{
 .book-body{
     border: 1px dotted grey;
 }
+.image-wrapper{
+    
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
 .book-image{
-    width: auto;
-    height: 100px;
+    width: 100vw;
+    transform: translate(0px,-33%)
 }
 .description-text{
     

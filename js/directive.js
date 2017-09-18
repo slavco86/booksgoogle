@@ -1,4 +1,4 @@
-angular.module('Directives')
+angular.module('Directives', [])
 .directive('scrollTo', function ($location, $anchorScroll) {
     return function(scope, element, attrs) {
   
@@ -9,8 +9,12 @@ angular.module('Directives')
               ev.preventDefault();
           });
           var location = attrs.scrollTo;
-          $location.hash(location);
-          $anchorScroll();
+          if ($location.hash() !== location){
+            $location.hash(location);
+          } else {
+            $anchorScroll(location);
+          }
+          console.log(location);
       });
   
     };

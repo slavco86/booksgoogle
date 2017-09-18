@@ -1,6 +1,8 @@
-<header class="top-header">
-    <h1>Welcome to Google Books!</h1>
+
+<header class="top-header bg">
+    <h1>The Book Store!</h1>
 </header>
+<div class="container-nav">
     <input type="checkbox" id="toggle-menu">
     <label for="toggle-menu" class="nav-icon">&#9776</label>
     <nav class="nav">
@@ -9,8 +11,8 @@
         <a class="nav-item">Magazines</a>
         <a class="nav-item">E-Books</a>
         <a class="nav-item">Account</a>
-        
     </nav>
+</div>
 <div class="container">
     <section class="aside-box">
         <div>
@@ -40,7 +42,7 @@
                         <p class="book-author-name" ng-repeat="author in book.volumeInfo.authors">{{author}}</p>
                     </div>
                     <div class="page-count">
-                        <span class="badge">
+                        <span class="badge text-center">
                             {{book.volumeInfo.pageCount}}
                         </span>
                         <span>

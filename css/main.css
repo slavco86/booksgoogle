@@ -97,27 +97,49 @@ textarea {
 
 /*                 ---> SlavCo CSS <--- */
 
+
+.bg{
+    background-image: url("../img/christian-bible.jpg");
+    height: 50vh;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100vw;
+    z-index: -1;
+
+}
+
+
 /*  =========================================================================
     Header
     =========================================================================*/
     .top-header{
-        background-color: red;
+
         display: flex;
         flex-direction: row;
-        align-content: center;
-        justify-content: center;
+        align-items: center;
+        justify-content:  center;
         text-align: center;
+        position: fixed;
+        top: 0;
         
     }
     .top-header h1{
-        font-size: 25px; 
+        font-size: 6.5vw; 
+        margin-left: 15%;
+        transform: rotate(-40deg);
+        text-shadow: 2px 2px 30px rgba(126, 77, 44, 0.70);
     }
 
 
 /*  =========================================================================
     Nav Bar
     ========================================================================= */
-
+.container-nav{
+    margin-top: 50vh;
+}
 .nav a{
     float: right;
     padding: 10px;
@@ -125,12 +147,13 @@ textarea {
 }
 nav a:hover{
     background: white;
-    color: grey;
+    color: #7e4d2c;
 }
 .nav-icon{
     display: block;
     width: 100vw;
-    background-color: grey;
+    background-color: #7e4d2c;
+    color: #f6ce91;
     text-align: center;
     font-size: 30px;   
 }
@@ -138,7 +161,8 @@ nav a:hover{
     display: none;
 }
 #toggle-menu:checked ~ .nav{
-    background-color: grey;
+    background-color: rgba(126, 77, 44, 0.52);
+    color: black;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -157,12 +181,15 @@ nav a:hover{
 .book-box{
     display: flex;
     flex-direction: column;
-
+    background-color: rgba(255, 255, 255, 0.79);
     margin-top: 10px;
+}
+.book-box:hover{
+    box-shadow: 5px 15px 30px rgba(126, 77, 44, 0.20);
 }
 
 .is-selected{
-    background-color: rgba(218, 85, 75, 0.47)
+    background-color: #f6ce91
 }
 .row{
     width: 100vw;
@@ -198,13 +225,7 @@ nav a:hover{
     margin-top: 10px;
       
 }
-.badge{
-    background-color: rgba(128, 128, 128, 0.50);
-    border-radius: 100%;
-    padding: 5px;
-    text-align: center;
-    
-}
+
 .book-author-names{
     margin-top: 10px;
 }
@@ -238,14 +259,14 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.51);
+    background-color: rgba(246, 206, 145, 0.68);
 }
 .aside-book{
     margin-bottom: 20px;
     max-width: 80vw;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.73);
 }
 .aside-book-info, .aside-book-header{
     display: flex;
@@ -349,6 +370,15 @@ nav a:hover{
    ========================================================================== */
 
 @media only screen and (min-width: 50em) {
+    .bg{
+        position: static;
+    }
+    .top-header h1{
+        font-size: 3.5vw;
+    }
+    .container-nav{
+        margin-top: 0px;
+    }
     .container{
         display: flex;
         flex-direction: row;
@@ -375,7 +405,8 @@ nav a:hover{
         margin: 20px;
     }
     .nav{
-        background-color: grey;
+        background-color:#7e4d2c;
+        color: #f6ce91;
         overflow: hidden;
         display: flex;
         flex-direction: row;

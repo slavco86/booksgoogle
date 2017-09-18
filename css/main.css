@@ -144,6 +144,13 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     border: 1px solid red;
+    margin-top: 10px;
+}
+.book-box:hover{
+    background-color: rgba(170, 170, 170, 0.19)
+}
+.is-selected{
+    background-color: rgba(218, 85, 75, 0.47)
 }
 .row{
     width: 100vw;

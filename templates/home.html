@@ -6,7 +6,7 @@
 <header class="top-header">
     <h1>Welcome to Google Books!</h1>
 </header>
-<section class="book-box" ng-repeat="book in books">
+<section class="book-box" ng-click="selection($index)" ng-repeat="book in books" id="book-{{$index}}">
 
     <header class="book-header">
         <div class="image-wrapper border">
@@ -32,11 +32,9 @@
                 pages
             </span>
         </div>
- 
-        
     </header>
 
-    <article class="book-body" id="book-{{$index}}">
+    <article class="book-body">
         <header>
             <h3>Description:</h3>
         </header>

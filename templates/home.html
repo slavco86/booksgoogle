@@ -1,14 +1,16 @@
 <header class="top-header">
     <h1>Welcome to Google Books!</h1>
 </header>
-<nav class="nav">
-    <a>Home</a>
-    <a>Books</a>
-    <a>Magazines</a>
-    <a>E-Books</a>
-    <a>Account</a>
-    <a class="icon">&#9776</a>
-</nav>
+    <input type="checkbox" id="toggle-menu">
+    <label for="toggle-menu" class="nav-icon">&#9776</label>
+    <nav class="nav">
+        <a class="nav-item">Home</a>
+        <a class="nav-item">Books</a>
+        <a class="nav-item">Magazines</a>
+        <a class="nav-item">E-Books</a>
+        <a class="nav-item">Account</a>
+        
+    </nav>
 <div class="container">
     <section class="aside-box">
         <div>
@@ -24,10 +26,10 @@
                 </div>
                 <div class="aside-book-info">
                     <div class="aside-book-header">
-                        <h3>
+                        <h3 class="text-center">
                             {{book.volumeInfo.title}}
                         </h3>
-                        <p>
+                        <p class="text-center">
                             {{book.volumeInfo.subtitle}}
                         </p>
                     </div>

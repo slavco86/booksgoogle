@@ -163,15 +163,19 @@ nav a:hover{
 }
 .text-center{
     margin: 0 auto;
+    text-align: center;
 }
 .book-header{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+
+}
+.book-info{
+    margin-left: 5px;
+    margin-top:10px;
 }
 .book-title{
-    margin-bottom: 0px;
+    margin: 0px;
     max-width: 70vw;
 }
 .book-subtitle{
@@ -179,8 +183,7 @@ nav a:hover{
     max-width: 70vw;
 }
 .page-count{
-    margin-left: auto;
-    margin-right: 25px;
+    margin-top: 10px;
       
 }
 .badge{
@@ -190,31 +193,55 @@ nav a:hover{
     text-align: center;
     
 }
-.book-authors, .book-author-name{
+.book-author-names{
+    margin-top: 10px;
+}
+.book-authors{
     margin: 0px;
     display: inline;
 }
 .book-author-name{
     padding: 10px;
+    display: inline;
 }
-.book-body{
-    border: 1px dotted grey;
-}
+
 .image-wrapper{
-    
-    height: 200px;
+    margin:10px;
+    height: auto;
     overflow: hidden;
-    margin: 0 auto;
+
 }
-.book-image{
-    width: 100vw;
-    transform: translate(0px,-33%)
+.description{
+    margin-left: 10px;
+    margin-top: 0px;
+    display: block;
 }
 .description-text{
-    
+    margin-left: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     height: 50%;
+}
+.aside-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid green;
+    background-color: rgba(128, 128, 128, 0.51);
+}
+.aside-book{
+    margin-bottom: 20px;
+    max-width: 50vw;
+    background-color: white;
+}
+.aside-book-info, .aside-book-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aside-book-text{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 

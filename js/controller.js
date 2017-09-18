@@ -14,7 +14,7 @@ angular.module('Controllers', [])
         }, 250);
     });
     $scope.scroll = function(x){
-        $anchorScroll.yOffset = 350;
+        $anchorScroll.yOffset = 150;
         var location = "book-" + x;
         $anchorScroll(location);
     };

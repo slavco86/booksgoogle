@@ -1,114 +1,120 @@
-<nav class="nav">
-    <a>Home</a>
-    <a>Catalog</a>
-    <a class="icon">&#9776</a>
-</nav>
 <header class="top-header">
     <h1>Welcome to Google Books!</h1>
 </header>
-<section class="aside-box border">
-    <div>
-        <h1>
-            Featured
-        </h1>
-    </div>
-    <aside ng-click="selection($index)" ng-repeat="book in books | limitTo: -2" id="book-{{$index}}" class="aside-book">
-            
-        <header class="aside-book-header">
-            <div class="image-wrapper">
-                <img class="book-image" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}">
-            </div>
-            <div class="aside-book-info">
-                <div class="aside-book-header">
-                    <h3>
-                        {{book.volumeInfo.title}}
-                    </h3>
-                    <p>
-                        {{book.volumeInfo.subtitle}}
+<nav class="nav">
+    <a>Home</a>
+    <a>Books</a>
+    <a>Magazines</a>
+    <a>E-Books</a>
+    <a>Account</a>
+    <a class="icon">&#9776</a>
+</nav>
+<div class="container">
+    <section class="aside-box">
+        <div>
+            <h1>
+                Featured
+            </h1>
+        </div>
+        <aside  ng-repeat="book in books | limitTo: -2"  class="aside-book">
+                
+            <header class="aside-book-header">
+                <div class="image-wrapper">
+                    <img class="book-image" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}">
+                </div>
+                <div class="aside-book-info">
+                    <div class="aside-book-header">
+                        <h3>
+                            {{book.volumeInfo.title}}
+                        </h3>
+                        <p>
+                            {{book.volumeInfo.subtitle}}
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="book-authors">
+                            Authors:
+                        </h4>   
+                        <p class="book-author-name" ng-repeat="author in book.volumeInfo.authors">{{author}}</p>
+                    </div>
+                    <div class="page-count">
+                        <span class="badge">
+                            {{book.volumeInfo.pageCount}}
+                        </span>
+                        <span>
+                            pages
+                        </span>
+                    </div>
+                </div>
+            </header>
+        
+            <article class="aside-book-header">
+                <header >
+                    <h3>Description:</h3>
+                </header>
+                <div ng-init="limitText = 140" >
+                    <p class="aside-book-text text-center">
+                        {{book.volumeInfo.description | limitTo: limitText}}
+                        <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length < limitText" ng-click="limitText = book.volumeInfo.description.length + 1" >
+                            <span class="text-span">Read More...</span> 
+                        </a>
+                        <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length > limitText" ng-click="limitText = 140; scroll($index)">
+                            <span>Read Less...</span>
+                        </a>
                     </p>
                 </div>
-                <div>
-                    <h4 class="book-authors">
-                        Authors:
-                    </h4>   
-                    <p class="book-author-name" ng-repeat="author in book.volumeInfo.authors">{{author}}</p>
-                </div>
-                <div class="page-count">
-                    <span class="badge">
-                        {{book.volumeInfo.pageCount}}
-                    </span>
-                    <span>
-                        pages
-                    </span>
-                </div>
-            </div>
-        </header>
-    
-        <article class="aside-book-header">
-            <header >
-                <h3>Description:</h3>
-            </header>
-            <div ng-init="limitText = 140" >
-                <p class="aside-book-text text-center">
-                    {{book.volumeInfo.description | limitTo: limitText}}
-                    <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length < limitText" ng-click="limitText = book.volumeInfo.description.length + 1" >
-                        <span class="text-span">Read More...</span> 
-                    </a>
-                    <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length > limitText" ng-click="limitText = 140; scroll($index)">
-                        <span>Read Less...</span>
-                    </a>
-                </p>
-            </div>
-        </article>
+            </article>
     </section>
+    <div class="book-container">
+        <section class="book-box" ng-click="selection($index)" ng-repeat="book in books | limitTo: 8" id="book-{{$index}}">
+                
+            <header class="book-header">
+                <div class="image-wrapper">
+                    <img class="book-image" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}">
+                </div>
+                <div class="book-info">
+                    <div>
+                        <h3 class="book-title">
+                            {{book.volumeInfo.title}}
+                        </h3>
+                        <p class="book-subtitle">
+                            {{book.volumeInfo.subtitle}}
+                        </p>
+                    </div>
+                    <div class="book-author-names">
+                        <h4 class="book-authors">
+                            Authors:
+                        </h4>   
+                        <p class="book-author-name" ng-repeat="author in book.volumeInfo.authors">{{author}}</p>
+                    </div>
+                    <div class="page-count">
+                        <span class="badge">
+                            {{book.volumeInfo.pageCount}}
+                        </span>
+                        <span>
+                            pages
+                        </span>
+                    </div>
+                </div>
+            </header>
+    
+            <article class="book-body">
+                <header >
+                    <h3 class="description">Description:</h3>
+                </header>
+                <div ng-init="limitText = 140">
+                    <p class="description-text">
+                        {{book.volumeInfo.description | limitTo: limitText}}
+                        <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length < limitText" ng-click="limitText = book.volumeInfo.description.length + 1" >
+                            <span class="text-span">Read More...</span> 
+                        </a>
+                        <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length > limitText" ng-click="limitText = 140; scroll($index)">
+                            <span>Read Less...</span>
+                        </a>
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
 
-</section>
-<section class="book-box" ng-click="selection($index)" ng-repeat="book in books | limitTo: 8" id="book-{{$index}}">
-        
-    <header class="book-header">
-        <div class="image-wrapper">
-            <img class="book-image" ng-src="{{book.volumeInfo.imageLinks.thumbnail}}">
-        </div>
-        <div class="book-info">
-            <div>
-                <h3 class="book-title">
-                    {{book.volumeInfo.title}}
-                </h3>
-                <p class="book-subtitle">
-                    {{book.volumeInfo.subtitle}}
-                </p>
-            </div>
-            <div class="book-author-names">
-                <h4 class="book-authors">
-                    Authors:
-                </h4>   
-                <p class="book-author-name" ng-repeat="author in book.volumeInfo.authors">{{author}}</p>
-            </div>
-            <div class="page-count">
-                <span class="badge">
-                    {{book.volumeInfo.pageCount}}
-                </span>
-                <span>
-                    pages
-                </span>
-            </div>
-        </div>
-    </header>
-
-    <article class="book-body">
-        <header >
-            <h3 class="description">Description:</h3>
-        </header>
-        <div ng-init="limitText = 140">
-            <p class="description-text">
-                {{book.volumeInfo.description | limitTo: limitText}}
-                <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length < limitText" ng-click="limitText = book.volumeInfo.description.length + 1" >
-                    <span class="text-span">Read More...</span> 
-                </a>
-                <a href="javascript:void(0)" ng-hide="book.volumeInfo.description.length > limitText" ng-click="limitText = 140; scroll($index)">
-                    <span>Read Less...</span>
-                </a>
-            </p>
-        </div>
-    </article>
-</section>
+</div>

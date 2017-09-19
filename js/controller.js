@@ -41,6 +41,7 @@ angular.module('Controllers', [])
             element.classList.remove("is-selected");
             
         } else {
+            element.classList.add("is-selected");
         }
     }
 });
